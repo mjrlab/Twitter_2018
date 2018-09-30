@@ -1,0 +1,45 @@
+2018-08-10, EL
+
+*********************************
+Note on week numbering convention:
+*********************************
+
+Week numbers were obtained using the week() function in Matlab. This was
+done consistently in code that assigns holidays to weeks of the year and in
+the code that calculates weekly tweetograms. Calculations obey the
+following convention:
+
+1. Week 1 = first week when Jan. 1 occurs. Dec. 31 always falls in the last
+week of the year (week 53). E.g., 
+    week(datetime('1-Jan-2013')) = 1 (a Tuesday) and 
+    week(datetime('31-Dec-2013')) = 53 (a Monday), 
+even though the days fell during the same workweek. In my tweetogram 
+calculations, wk1 of year N is combined with wk53 of year N-1 to ensure that
+all weeks have the same number of days. Thus, data in Figure 5 only has 
+weeks 1-52 of 2013 (week 53 belongs to the next year).
+
+2. Because the analysis in this figure focuses on weekday tweetograms, I
+manually assigned all holidays/dates of interest to nearest workweeks (M-F):
+    - "DST start" refers to the first workweek (M-F) in DST
+    - "DST end" refers to the first workweek (M-F) after transition to ST
+    - "break start" is assigned to the week when break begins, even if
+        less than half of the workweek falls during that break
+    - "break end" is assigned to the week when the first school day after
+        the break occurs, even if that day is not a Monday
+    - yellow bands in Fig. 5 span the interval between "break start" 
+        and "break end" weeks (e.g., if the fall break occurs during Tue-Fri
+        of the 42nd week of the year, then the endpoints of the bar are [42 43]);
+    - "staff days" when school is open to staff but not students were
+        counted towards school breaks
+
+3. Only school breaks containing at least two days off were considered.
+
+4. For analysis of "summer break effect:"
+    - lastDay occurs during the last workweek of the school year 
+    - firstDay occurs during the first week of the school year
+
+5. Note: the interim breaks (fall, spring) have been verified to obey this
+convention only for the counties shown in Fig. 5. It is likely that for 
+some other counties the break start dates have been listed as beginning 
+on the week prior to the first Monday of the break. This does warning does
+not apply to first and last days of the year.  
