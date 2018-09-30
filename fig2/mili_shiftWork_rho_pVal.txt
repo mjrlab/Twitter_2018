@@ -1,0 +1,39 @@
+rhoSJL_avgSJL =
+
+    0.1870
+
+
+pSJL_avgSJL =
+
+    0.0464
+
+******************
+
+rhoSJL_sleepDebt =
+
+   -0.0322
+
+
+pSJL_sleepDebt =
+
+    0.7338
+
+******************
+rhoSJL_wkdayWidth =
+
+   -0.2338
+
+
+pSJL_wkdayWidth =
+
+    0.0123
+
+******************
+rhoSJL_wkendWidth =
+
+   -0.2746
+
+
+pSJL_wkendWidth =
+
+    0.0031
